@@ -11,6 +11,7 @@ echo "let's remove any existing old doker version"
 echo
 sleep 2
 sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine
+echo
 if
   [ $? -eq 0 ]
   then
@@ -51,6 +52,7 @@ if
        [ $? -eq 0 ]
        then
   echo "Check the status of the daemon to make sure it is up and running"
+sleep 2
   echo
   sleep 1
   sudo systemctl status docker
@@ -59,7 +61,8 @@ if
   [ $? -eq 0 ]
   then
   echo "Verify that the version is installed "
-  sudo docker run hello-world
+sleep 2  
+sudo docker run hello-world
   fi
     if
      [ $? -eq 0 ]
